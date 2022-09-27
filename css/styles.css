@@ -13,6 +13,11 @@
 
 a:hover {
     border: blue;
+}
+
+hover,
+focus,
+focus-within {
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -278,9 +283,10 @@ header {
     left: 50%;
     transform:scale(1) translate(-50%, -50%);
 
-    display: flex;
+    display: block;
     min-width: 528px;
     min-height: 581px;
+    padding: 40px;
 
     background-color: var(--white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -289,15 +295,159 @@ header {
     
 }
 
+.title-modal h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.title-form {
+    display: inline-block;
+    width: 100%;
+}
+
+.form-first {
+    display: block;
+    margin-top: 2px;
+
+}
+
+.form-first label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1,17px;
+    letter-spacing: 0.01em;
+    color: var(--pargraf-text-color);
+}
+
+textarea {
+    resize: none;
+    padding: 11px 16px;
+}
+
+.form-first input,
+.form-first textarea {
+    margin-top: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+.form-first input {
+    height: 40px;
+    padding-left: 42px;
+}
+
+.form-first textarea::placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.form-first input:focus,
+.form-first textarea:focus {
+    border: 1px solid var(--blue);
+}
+
+.form-first input:focus+ .form-icon {
+    fill: var(--blue);
+}
+
+.form-icon {
+    width: 18px;
+    position: absolute;
+    z-index: 2;
+    left: 12px;
+    top: -65%;
+    fill: var(--title-text-color);
+}
+
+.checkbox {
+    /*
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+*/
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+}
+
+.form-second {
+    position: relative;
+    margin-top: 20px;
+}
+
+.form-second label {
+    display: flex;
+    justify-content: center;
+} 
+
+
+.icon-check {
+    position: absolute;
+    left: 9px;
+    top: 1px;
+    content: "";
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--title-text-color);
+    border-radius: 10%;
+}
+
+.checkbox:checked~ .icon-check {
+   background-image: url(../images/icons.svg/icon-check.svg);
+   background-size: contain;
+   background-origin: border-box;
+   border-color: transparent;
+}
+
+
+.contract {
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.form-3{
+    text-align: center;
+}
+
+.title-form button {
+    margin-top: 30PX;
+    padding: 10px 52px;
+}
+
+.form-3 button {
+    
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+}
+
 .modal-button {
     position: absolute;
     right: 8px;
     top: 8px;
-    background-image:url(../images/icons.svg/button-X.svg) ;
-    background-color: var(--white);
+    /*background-image:url(../images/icons.svg/button-X.svg) ;
     background-position: center;
     background-repeat: no-repeat;
-    color: #000000;
+    /*color: #000000;*/
+    background-color: var(--white);
     width: 30px;
     height: 30px;
     padding: 6px;
@@ -305,10 +455,26 @@ header {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.modal-button svg {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    fill: 000000;
+    width: 18px;
+    height: 18px;
+    z-index: 5;
+}
+
+.modal-button svg:hover,
+.modal-button svg:focus {
+    fill: var(--blue);
+}
+
 .modal-button:hover,
 .modal-button:focus {
     background-color: var(--white);
-
+    fill: var(--blue);
 }
 
 .button-title {
@@ -594,12 +760,17 @@ header {
     fill:var(--blue);
 }
 
+/*--------------------------------------------Footer-------------------------------------------------------------*/
+
 footer {
     background-color: var(--dark-background);
     color: var(--white);
     outline: 2px solid none;
-    padding-top: 60px;
-    padding-bottom: 60px;
+}
+
+.footer-left {
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 footer a {
@@ -636,6 +807,8 @@ address {
 
 .join {
     margin-left: 70px;
+    margin-top: 72px;
+    margin-bottom: 100px;
 }
 
 .join h2 {
@@ -678,6 +851,90 @@ address {
     background-color: var(--blue);
 }
 
+.mailing {
+    margin-left: 93px;
+    margin-top: 72px;
+    margin-bottom: 94px;
+}
+
+.mailing h2 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.mailing-form input {
+    width: 358px;
+    height: 50px;
+    margin-right: 12px;
+    padding-left: 16px;
+    background-color: var(--dark-background);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+}
+
+.mailing-form input:focus {
+    border: 3px solid black;
+}
+
+.mailing-form button {
+    position: relative;
+    text-align: left;
+    padding-left: 28px;
+    background-color: var(--blue);
+    color: var(--white);
+    width: 200px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.06em;
+   
+}
+
+
+.icon-button {
+    position: absolute;
+    right: 28px;
+    top: 13px;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+/*.mailing-form {
+    display: flex;
+    padding: 15px 0 15px 16px;
+    margin-right: 12px;
+    width: 358px;
+    height: 50px;
+    /*border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+}
+
+.mailing-form input {
+    background-color: var(--dark-background);
+}
+
+.mailing button {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    background-color: var(--blue);
+}*/
+
+/*--------------------------------------------Portfolio-------------------------------------------------------------*/
+
 .portfolio-buttons {
     margin-left: auto;
     margin-right: auto;
@@ -686,12 +943,14 @@ address {
     margin-top: 94px;
 }
 
+
 .list-buttons {
     display: flex;
-    flex-direction: column(row)
+    flex-direction: column(row);
     padding-left: 0;
     margin-left: -8px;
 }
+
 
 .item-button {
     flex-basis: content;
@@ -699,6 +958,7 @@ address {
     margin-left: 8px;
     background-color: rgba(245, 244, 250, 1);
     /* justify-content: space-between ; - можна вписувати замість flex-basis: content; щоб розподілити текст*/
+    
 }
 
 .item-button:hover,
@@ -800,3 +1060,5 @@ address {
     margin-top: 4px;
     margin-bottom: 0;
 }
+
+

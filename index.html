@@ -114,11 +114,57 @@
           </div>
           <div class="backdrop is-hidden" data-modal>
             <div class="title-modal">
-              <p></p>
-              <button class="modal-button" data-modal-close></button>
+              <button class="modal-button" data-modal-close>
+                <svg class="test">
+                  <use href="./images/symbol-defs.svg#icon-close-black"></use>
+                </svg>
+              </button>
+              <h2>Залиште свої дані, ми вам передзвонимо</h2>
+              <form class="title-form"> 
+
+                <div class="form-group form-first" role="group" aria-labelledby="form-contact">
+                  <label>Ім'я
+                    <input type="text" name="name" autofocus required autocomplete="name"/>
+                    <svg class="form-icon icon-name">
+                      <use href="./images/symbol-defs.svg#icon-person-black"></use>
+                    </svg>
+                  </label>
+
+                  <label>Телефон
+                    <input type="tel" name="phone_number" required autocomplete="tel"/>
+                    <svg class="form-icon icon-phone">
+                      <use href="./images/symbol-defs.svg#icon-phone-black"></use>
+                    </svg>
+                  </label>
+
+                  <label>Пошта
+                    <input type="email" name="email" required autocomplete="email"/>
+                    <svg class="form-icon icon-email">
+                      <use href="./images/symbol-defs.svg#icon-email-black"></use>
+                    </svg>
+                  </label>
+
+                  <label>Коментар
+                    <textarea name="comment" rows="7" placeholder="Введіть текст" maxlength="1000"></textarea>
+                  </label>
+                </div>
+
+                <div class="form-group form-second" role="group" aria-labelledby="terms of the contract">
+                  <label>
+                    <input class="checkbox" type="checkbox" name="policy" value="">
+                    Погоджуюся з розсилкою та приймаю
+                    <a href="" class="contract">Умови договору</a>
+                    <span class="icon-check"></span>
+                  </label>
+                </div>
+
+                <div class="form-3">
+                <button type="submit">Відправити</button>
+                </div>
+                
+              </form>
             </div>
           </div>
-        </div>
       </section>
 
       <section class="our-works">
@@ -407,7 +453,7 @@
 
     <footer>
       <div class="container footer-container">
-        <div>
+        <div class="footer-left">
           <a href="./index.html" lang="en" class="logo logo-focus"
             >Web<span class="logo-white">Studio</span></a
           >
@@ -470,6 +516,18 @@
               </a>
             </li>
           </ul>
+        </div>
+        <div class="mailing">
+          <h2>Підпишіться на розсилку</h2>
+          <div class="mailing-form">
+            <form>
+              <input type="email" name="E-mail" placeholder="E-mail" required >
+              <button type="submit">Підписатися
+                <svg class="icon-button">
+                  <use href="./images/symbol-defs.svg#icon-icon-send"></use>
+                </svg>
+              </button>
+            </form>
         </div>
       </div>
     </footer>
